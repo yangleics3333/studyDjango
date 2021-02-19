@@ -56,10 +56,11 @@ ROOT_URLCONF = 'studyDjango.urls'
 
 #模板引擎
 #模板配置
+
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], #模板的绝对路径，默认是先找应用下的templates
+      'BACKEND': 'django.template.backends.django.DjangoTemplates',
+       'DIRS': [os.path.join(BASE_DIR, 'templates')], #模板的绝对路径，默认是先找应用下的templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +71,10 @@ TEMPLATES = [
             ],
         },
     },
-]
+] 
+
+
+
 
 #项目入口
 WSGI_APPLICATION = 'studyDjango.wsgi.application'
@@ -81,8 +85,12 @@ WSGI_APPLICATION = 'studyDjango.wsgi.application'
 #数据库配置
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'zjye_datacenter',
+        'HOST':'rm-8vb4d527ak8r4mrpo43500.mysql.zhangbei.rds.aliyuncs.com',
+        'USER':'datacenter',
+        'PASSWORD':'eSyfg3EYSusw6BNO',
+        'PORT':3306
     }
 }
 
@@ -126,3 +134,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+#静态资源
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]

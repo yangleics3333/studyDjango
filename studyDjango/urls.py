@@ -21,5 +21,6 @@ from django.urls import path,include #include 是使用子路由必须要引用�
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/',include("news.urls")),
-    path('group/',include("group.urls"))
+    path('group/',include("group.urls")),
+    path('remark/',include("remark.urls"))
 ]
