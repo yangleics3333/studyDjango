@@ -64,6 +64,7 @@ def handle_insert_bulk_create(requests):
 def handle_delete(requests):
     # 删除一条
     try:
+        print('123')
         data = DjangoTest.objects.get(pk=38704)
         print(data, type(data))
         if data:
