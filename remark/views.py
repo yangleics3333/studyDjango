@@ -115,4 +115,3 @@ def handle_select_where(requests):
         print(type(i), len(data))
         print(i.id, i.title, i.article_source, i.article_tags)
     return HttpResponse(data)
-
