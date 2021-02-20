@@ -113,6 +113,6 @@ def handle_select_where(requests):
         id__gt=44593).filter(article_source='海外网')
     for i in data:
         print(type(i), len(data))
-        print('hello')
         print(i.id, i.title, i.article_source, i.article_tags)
     return HttpResponse(data)
+
