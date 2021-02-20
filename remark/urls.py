@@ -14,7 +14,7 @@ urlpatterns = [
     path('update/', views.handle_update, name='update'),
     path('updateBulk/', views.handle_update_bulk, name='updateBulk'),
     path('select/', views.handle_select, name='select'),
-    path('selectWhere/', views.hanle_select_where, name='selectWhere'),
+    path('selectWhere/', views.handle_select_where, name='selectWhere'),
     path('delete/', views.handle_delete, name='delete'),
     path('deleteBulk/', views.handle_delete_bulk, name='deleteBulk'),
 ]

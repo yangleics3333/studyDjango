@@ -40,8 +40,10 @@ def access(requests, path):
 def change_name(requests, name):
     return HttpResponse(name + '- 123')
 
-def player(requests,name,age):
+
+def player(requests, name, age):
     return HttpResponse(name + str(age))
+
 
 # 使用get方法请求
 def get_req(requests):
@@ -108,37 +110,41 @@ def json_info(requests):
     return JsonResponse(list_con, safe=False)  # 字典需要将safe设置未False，默认未True
 
 
-#重定向
+# 重定向
 def redirect1(requests):
     # 首先用HttpResponseRedirect
     # 使用HttpResponseRedirect将重庆想的路径设置
     # 弊端：太长了
     return HttpResponseRedirect("/news/show/{}/".format(10))
 
+
 def redq(requests):
-    return HttpResponseRedirect("/news/player/{}/{}/".format("rock",10))
+    return HttpResponseRedirect("/news/player/{}/{}/".format("rock", 10))
+
 
 def baidu(requests):
     return HttpResponseRedirect('https://www.baidu.com/')
 
-#反向定位
-#由应用的作用域（命名空间）：name来确定路由
-#首先在应用下的urls.py中进行设置
-#反向定位是根据命名空间:name名，来找到请求路径 
-#正向是请求路径到函数
-#需要导入包 ： from django.urls import reverse
+
+# 反向定位
+# 由应用的作用域（命名空间）：name来确定路由
+# 首先在应用下的urls.py中进行设置
+# 反向定位是根据命名空间:name名，来找到请求路径
+# 正向是请求路径到函数
+# 需要导入包 ： from django.urls import reverse
 def reverse_path(requests):
     return HttpResponseRedirect(reverse("News:jsonInfo"))
 
-#带参数的：
-#路径中具体名字的必须用
-#kwargs = {'age':1}
+
+# 带参数的：
+# 路径中具体名字的必须用
+# kwargs = {'age':1}
 def reverse_path_para(requests):
-    return HttpResponseRedirect(reverse("News:player",kwargs={'name':'rock','age':1000}))
+    return HttpResponseRedirect(reverse("News:player", kwargs={'name': 'rock', 'age': 1000}))
 
-#视图错误
-#403错误：permission_denied - 权限拒绝
-#404错误：page_not_found - 找不到指定文件
-#500错误：server_error - 服务器内部错误
+# 视图错误
+# 403错误：permission_denied - 权限拒绝
+# 404错误：page_not_found - 找不到指定文件
+# 500错误：server_error - 服务器内部错误
 
-#Debug模式关闭下定义404页面
+# Debug模式关闭下定义404页面

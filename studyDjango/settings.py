@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'zjye_datacenter',
-        'HOST':'rm-8vb4d527ak8r4mrpo43500.mysql.zhangbei.rds.aliyuncs.com',
+        'HOST':'rm-8vb4d527ak8r4mrpo43500cm.mysql.zhangbei.rds.aliyuncs.com',
         'USER':'datacenter',
         'PASSWORD':'eSyfg3EYSusw6BNO',
         'PORT':3306
@@ -138,3 +138,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
