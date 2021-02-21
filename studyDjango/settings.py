@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'zjye_datacenter',
-        'HOST':'rm-8vb4d527ak8r4mrpo43500cm.mysql.zhangbei.rds.aliyuncs.com',
+        'HOST':'rm-8vb4d527ak8r4mrpo43500.mysql.zhangbei.rds.aliyuncs.com',
         'USER':'datacenter',
         'PASSWORD':'eSyfg3EYSusw6BNO',
         'PORT':3306
