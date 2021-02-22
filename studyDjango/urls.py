@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/',include("news.urls")),
     path('group/',include("group.urls")),
-    path('remark/',include("remark.urls"))
+    path('remark/',include("remark.urls")),
+    path('cbv/',include("cbv.urls"))
 ]

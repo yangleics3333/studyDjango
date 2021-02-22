@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'news.apps.NewsConfig',
     'remark.apps.RemarkConfig',
-    'group.apps.GroupConfig'
+    'group.apps.GroupConfig',
+    'cbv.apps.CbvConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

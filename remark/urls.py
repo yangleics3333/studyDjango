@@ -29,4 +29,5 @@ urlpatterns = [
     path('selectExisit/', views.handle_select_exisit, name='selectExisit'),
     path('selectFilter/', views.select_filter, name='selectFilter'),
     path('selectRaw/', views.select_raw, name='selectRaw'),
+    path('selectPage/<int:number>/', views.select_page, name='selectPage'),
 ]

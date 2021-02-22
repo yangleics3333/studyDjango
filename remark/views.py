@@ -4,6 +4,7 @@ from remark.models import AnalysisCommonNews
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.db.models import Max, Min, Sum, Avg, Count, Q, F
+from django.core.paginator import Paginator
 
 from random import randint
 
@@ -280,6 +281,18 @@ def select_filter(requests):
     return HttpResponse('ok')
 
 def select_raw():
-    data = AnalysisCommonNews.objects.raw("select * from analysis_article_class_dict")
+    data = AnalysisCommonNews.objects.raw("select * from analysis_common_news where news_time > '2021-02-08 13:27:00' order by news_time desc limit 10")
     print(data)
+    return HttpResponse('ok')
+
+def select_page(requests,number):
+    items = AnalysisCommonNews.objects.filter(news_time__gt='2021-02-08 13:27:00').order_by('-news_time')
+ 
+    #产生分页器
+    paginator = Paginator(items,10)
+    #分页
+    page = paginator.page(number)
+    
+    for data in page.object_list:
+        print(data.title)
     return HttpResponse('ok')
